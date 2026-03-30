@@ -1,0 +1,26 @@
+/* ═══════════════════════════════════════
+   SHARED COMPONENT STYLES
+   (imported as CSS module by components)
+═══════════════════════════════════════ */
+
+/* ── Brand circle colors ── */
+.bc-growatt  { background: linear-gradient(135deg, #E31E24, #A01015); }
+.bc-havells  { background: linear-gradient(135deg, #1E3FAE, #1230A0); }
+.bc-deye     { background: linear-gradient(135deg, #E8A020, #B07010); }
+.bc-eastman  { background: linear-gradient(135deg, #18A84A, #0E7832); }
+.bc-exide    { background: linear-gradient(135deg, #1E3FAE, #1230A0); }
+.bc-amaron   { background: linear-gradient(135deg, #E31E24, #A01015); }
+.bc-luminous { background: linear-gradient(135deg, #E8A020, #B07010); }
+.bc-livguard { background: linear-gradient(135deg, #18A84A, #0E7832); }
+
+/* ── Badge colors ── */
+.badge-red   { background: var(--red); }
+.badge-blue  { background: var(--blue); }
+.badge-gold  { background: var(--gold); }
+.badge-green { background: var(--green); }
+
+/* ── Button colors ── */
+.btn-red   { background: var(--red); }
+.btn-blue  { background: var(--blue); }
+.btn-gold  { background: var(--gold); }
+.btn-green { background: var(--green); }

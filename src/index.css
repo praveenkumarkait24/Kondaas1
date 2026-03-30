@@ -1,0 +1,144 @@
+/* ═══════════════════════════════════════
+   GLOBAL RESET & CSS VARIABLES
+═══════════════════════════════════════ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red: #E31E24;
+  --red2: #C01318;
+  --red-glow: rgba(227, 30, 36, 0.2);
+  --silver: #D8DCE6;
+  --silver2: #E8ECF4;
+  --silver3: #F2F4F8;
+  --white: #FFFFFF;
+  --dark: #1A1C22;
+  --dark2: #23262E;
+  --ink: #1E2028;
+  --ink2: #3A3D4A;
+  --ink3: #6B7080;
+  --gold: #E8A020;
+  --green: #18A84A;
+  --blue: #1E3FAE;
+  --font-d: 'Barlow Condensed', sans-serif;
+  --font-b: 'Barlow', sans-serif;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: var(--font-b);
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  display: flex;
+  flex-direction: column;
+
+  /* ── Global background image ── */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('/img/solar-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+img {
+  -webkit-user-drag: none !important;
+}
+
+.app-layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 36px; /* Space for the fixed footer */
+}
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════ */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.fade-slide-up {
+  animation: fadeSlideUp 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ═══════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════ */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--silver); border-radius: 3px; }
+
+/* ═══════════════════════════════════════
+   NAVIGATION ROW (Dual Back)
+   ═══════════════════════════════════════ */
+.nav-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: transparent;
+  flex-shrink: 0;
+  z-index: 50;
+}
+
+.back-btn-dual {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50px; /* Pill shape */
+  padding: 8px 20px;
+  font-family: var(--font-d);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.back-btn-dual:active {
+  transform: scale(0.96);
+  background: var(--ink2);
+}
+
+.back-btn-dual::before {
+  content: "←";
+  font-size: 24px;
+}

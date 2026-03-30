@@ -1,0 +1,339 @@
+.screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Premium silver background */
+  background:
+    linear-gradient(160deg,
+      #f8f9fb 0%,
+      #e8ecf4 18%,
+      #d0d5e2 38%,
+      #c4c9d8 52%,
+      #d8dce8 68%,
+      #eef0f6 84%,
+      #ffffff 100%);
+}
+
+.content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  padding: 32px 50px 55px;
+  overflow: hidden;
+}
+
+/* ── LEFT ── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.logoBox {
+  background: var(--red);
+  border-radius: 30px;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 32px rgba(227, 30, 36, 0.4);
+}
+
+.logoImg {
+  height: 64px;
+  filter: brightness(0) invert(1);
+}
+
+.logoName {
+  font-family: var(--font-d);
+  font-size: 38px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+}
+
+.logoRating {
+  font-family: var(--font-b);
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1.5px;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 20px 16px;
+  text-align: center;
+  border: 1.5px solid rgba(180, 185, 200, 0.6);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.statVal {
+  font-family: var(--font-d);
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--red);
+  line-height: 1;
+}
+
+.statLbl {
+  font-family: var(--font-b);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink3);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Silver-tinted about card */
+.about {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 30px;
+  padding: 28px 32px;
+  border: 1.5px solid rgba(180, 185, 200, 0.5);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.aboutTitle {
+  font-family: var(--font-d);
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.aboutTitle span { color: var(--red); }
+
+.aboutBody {
+  font-size: 24px;
+  color: var(--ink);
+  line-height: 1.4;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.aboutBody strong { color: var(--red); font-weight: 900; }
+
+.promise {
+  background: var(--dark);
+  border-radius: 14px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.promiseIcon { font-size: 28px; flex-shrink: 0; }
+
+.promiseTitle {
+  font-family: var(--font-d);
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.promiseText {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+/* ── RIGHT ── */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.offeringsTitle {
+  font-family: var(--font-d);
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.offeringsTitle span { color: var(--red); }
+
+.carouselContainer {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+}
+
+.offeringsGrid {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+
+.carouselPage {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.4);
+  cursor: pointer;
+  padding: 0;
+}
+
+.indicator.active {
+  background: #FFD166;
+  transform: scale(1.4);
+  border-color: #FFD166;
+}
+
+/* Silver-tinted offering card */
+.offeringCard {
+  background: rgba(0, 0, 0, 0.3); /* Base overlay */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 30px;
+  padding: 35px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.offeringIcon { 
+  font-size: 110px; 
+  line-height: 1; 
+  margin-bottom: 20px; 
+  filter: drop-shadow(0 0 20px currentColor);
+}
+
+.offeringName {
+  font-family: var(--font-d);
+  font-size: 52px;
+  font-weight: 950;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 
+    0 4px 15px rgba(0,0,0,0.8),
+    0 2px 4px rgba(0,0,0,1);
+}
+
+.offeringDesc {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.98);
+  line-height: 1.25;
+  font-weight: 800;
+  padding: 0 40px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+}
+
+.offeringTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.offeringTag {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid currentColor;
+  border-radius: 30px;
+  padding: 8px 22px;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(5px);
+}
+
+.modeHint {
+  background: var(--red);
+  border-radius: 14px;
+  padding: 22px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  font-family: var(--font-d);
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 28px rgba(227, 30, 36, 0.45);
+}
+
+.modeHintArrow {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  letter-spacing: 2px;
+}

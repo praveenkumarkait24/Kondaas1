@@ -1,0 +1,406 @@
+.screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── MAIN CONTENT ── */
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.posterCard {
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('/img/solar-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Nav Back Buttons */
+.navBack {
+  position: absolute;
+  top: 20px; /* Reduced from 100px now that header is outside card flow */
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50px;
+  padding: 8px 24px;
+  font-family: var(--font-d);
+  font-size: 18px;
+  font-weight: 800;
+  color: #000;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.navBackLeft { left: 50px; }
+.navBackRight { right: 50px; }
+
+.posterLeft {
+  flex: 1.8;
+  padding: 40px 40px 140px 80px; /* Increased bottom to 140px to prevent overlap with footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* BOTTOM BAR */
+.posterFooter {
+  position: absolute;
+  bottom: 15px; /* Lowered even more for max gap */
+  left: 80px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  z-index: 30;
+}
+
+.glassPanel {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  padding: 35px 45px; /* Reduced vertical padding */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  max-width: 800px; /* Increased from 650px as requested */
+}
+
+.brandBox {
+  margin-bottom: 15px; /* Reduced from 25px */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brandLogo {
+  height: 80px; /* Reduced for vertical fit */
+  max-width: 300px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.brandLogoWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 16px;
+  padding: 12px 24px;
+  border: 2px solid rgba(243, 156, 18, 0.7);
+  box-shadow:
+    0 0 18px rgba(243, 156, 18, 0.45),
+    0 4px 20px rgba(0, 0, 0, 0.35);
+  max-width: 340px;
+  transition: box-shadow 0.3s ease;
+}
+
+.brandPosition {
+  font-family: var(--font-d);
+  font-size: 20px;
+  font-weight: 800;
+  color: #f39c12; /* Gold/Orange branding */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mainTitle {
+  font-family: var(--font-d);
+  font-size: 80px; /* Reduced for vertical fit */
+  font-weight: 800;
+  line-height: 0.9;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 20px; /* Reduced from 30px */
+  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  letter-spacing: -1px;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Reduced gap */
+  margin-bottom: 20px; /* Reduced from 30px */
+}
+
+.featItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.featCheck {
+  color: #f39c12;
+  font-size: 24px;
+}
+
+.advSection {
+  margin-top: 5px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.advHeading {
+  font-family: var(--font-d);
+  font-size: 24px;
+  font-weight: 900;
+  color: #f39c12;
+  margin-bottom: 15px;
+}
+
+.advList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.advList li {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+  padding-left: 20px;
+}
+
+.advList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+}
+
+/* RIGHT CONTENT */
+.posterRight {
+  flex: 1.8; /* More space for the enlarged product */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px 0 20px;
+}
+
+.productStage {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  transform: translateY(30px); /* Balanced vertical position */
+}
+
+.productImg {
+  max-width: 90%;
+  max-height: 600px;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4));
+  mix-blend-mode: multiply; /* Removes white background from PNG */
+  transition: transform 0.5s ease;
+}
+
+.reflection {
+  width: 500px;
+  height: 100px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.1), transparent 70%);
+  filter: blur(25px);
+  margin-top: -30px;
+  opacity: 0.4;
+}
+
+/* MINI RING (Used in Bottom Grid) */
+.miniRing {
+  width: 60px; 
+  height: 60px;
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.blueRing { background: conic-gradient(#3498db 0%, #3498db 80%, rgba(255,255,255,0.1) 80%); }
+.orangeRing { background: conic-gradient(#f39c12 0%, #f39c12 85%, rgba(255,255,255,0.1) 85%); }
+.redRing { background: conic-gradient(#e31e24 0%, #e31e24 90%, rgba(255,255,255,0.1) 90%); }
+
+.miniRing::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: var(--dark);
+  border-radius: 50%;
+}
+
+.miniIcon {
+  position: relative;
+  z-index: 2;
+  font-size: 24px;
+}
+
+.sideFeatLabel {
+  font-family: var(--font-d);
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+/* CIRCULAR GAUGE CONT */
+.gaugeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-20px); /* Aligned with overall visual center */
+}
+
+.gaugeRing {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding: 10px;
+  background: conic-gradient(from 180deg, #f39c12 0%, #f39c12 85%, rgba(255,255,255,0.1) 85%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.warrantyGauge {
+  background: conic-gradient(from 180deg, #e31e24 0%, #e31e24 90%, rgba(255,255,255,0.1) 90%); /* Red for warranty */
+}
+
+.gaugeContent {
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 26, 35, 0.9);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255,255,255,0.1);
+  text-align: center;
+  padding: 10px;
+}
+
+.gaugeValue {
+  font-size: 58px;
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+}
+
+.gaugeValueSm {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #fff;
+  text-align: center;
+}
+
+.gaugeLabel {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* BOTTOM BAR */
+.posterFooter {
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  z-index: 30;
+}
+
+.badgeSlanted {
+  background: #e31e24;
+  color: #fff;
+  padding: 12px 35px;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: var(--font-d);
+  text-transform: uppercase;
+  transform: skewX(-10deg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: inline-flex;
+  margin-top: 40px;
+  align-self: flex-start;
+  border-radius: 4px;
+}
+
+.infoGrid {
+  flex: 1;
+  display: flex;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 10px 30px;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.infoIcon {
+  font-size: 40px;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+.infoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoText strong {
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.infoText span {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+}
