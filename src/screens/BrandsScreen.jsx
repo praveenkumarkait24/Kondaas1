@@ -61,6 +61,11 @@ export default function BrandsScreen({
 
 function BrandCard({ brand, type, onClick }) {
   const isInverter = type === 'inverter'
+  const getAssetPath = (path) => {
+    if (!path) return ''
+    if (path.startsWith('http')) return path
+    return `${import.meta.env.BASE_URL}${path}`
+  }
 
   return (
     <div className={styles.card} onClick={onClick}>
@@ -72,12 +77,12 @@ function BrandCard({ brand, type, onClick }) {
 
       <div className={styles.imageContainer}>
         <img 
-          src={brand.image} 
+          src={getAssetPath(brand.image)} 
           alt={brand.name} 
           className={styles.productImage} 
         />
         <div className={styles.logoOverlay}>
-          <img src={brand.logo} alt={brand.name} className={styles.miniLogo} />
+          <img src={getAssetPath(brand.logo)} alt={brand.name} className={styles.miniLogo} />
         </div>
       </div>
 

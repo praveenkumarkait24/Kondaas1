@@ -13,6 +13,12 @@ export default function CompareScreen({
   const isInverter = type === 'inverter'
   const { columns, rows } = compareData
 
+  const getAssetPath = (path) => {
+    if (!path) return ''
+    if (path.startsWith('http')) return path
+    return `${import.meta.env.BASE_URL}${path}`
+  }
+
   return (
     <div className={styles.screen}>
       <Header
@@ -45,7 +51,7 @@ export default function CompareScreen({
                       {col.logo && (
                         <div className={styles.logoWrapper}>
                           <img 
-                            src={col.logo} 
+                            src={getAssetPath(col.logo)} 
                             alt={col.label} 
                             className={`${styles.brandLogo} ${col.label === 'Livguard' ? styles.livguardLogo : ''}`} 
                           />

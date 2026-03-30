@@ -11,7 +11,7 @@ const offerings = [
     name: 'Home Solar',
     desc: 'Cut your electricity bills and power your home with clean energy. Rooftop systems designed for maximum efficiency and quick ROI.',
     tags: ['Cost Saving', 'Easy Install', 'Low Maintenance'],
-    bg: '/img/cartoon/home.png',
+    bg: 'img/cartoon/home.png',
     color: '#40a9ff', // Bright Solar Blue
   },
   {
@@ -19,7 +19,7 @@ const offerings = [
     name: 'Commercial Solar',
     desc: 'Boost your business savings with scalable solar solutions. From offices to factories — reliable systems that reduce costs.',
     tags: ['High Efficiency', 'Scalable', 'Business Growth'],
-    bg: '/img/cartoon/commercial.png',
+    bg: 'img/cartoon/commercial.png',
     color: '#ffa940', // Business Amber
   },
   {
@@ -27,7 +27,7 @@ const offerings = [
     name: 'Solar Parks',
     desc: 'Large-scale renewable energy solutions for industries and communities. Built with advanced technology for maximum long-term output.',
     tags: ['Utility-Scale', 'Govt. Approved', 'Sustainable'],
-    bg: '/img/cartoon/parks.png',
+    bg: 'img/cartoon/parks.png',
     color: '#73d13d', // Eco Green
   },
   {
@@ -35,7 +35,7 @@ const offerings = [
     name: 'Smart Monitoring',
     desc: 'Automatic problem detection and resolution — no manual checks needed. All-in-one monitoring app coming soon.',
     tags: ['Auto Detection', 'App Control', 'Real-Time'],
-    bg: '/img/cartoon/smart.png',
+    bg: 'img/cartoon/smart.png',
     color: '#36cfc9', // Tech Teal
   },
 ]
@@ -131,7 +131,7 @@ export default function HomeScreen({ mode, onModeChange }) {
                   <div 
                     className={styles.offeringCard}
                     style={{ 
-                      backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url(${offerings[page].bg})`,
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url(${import.meta.env.BASE_URL}${offerings[page].bg})`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                     }}

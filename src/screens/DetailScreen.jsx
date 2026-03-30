@@ -15,6 +15,11 @@ export default function DetailScreen({
   onCompare,
 }) {
   const isInverter = type === 'inverter'
+  const getAssetPath = (path) => {
+    if (!path) return ''
+    if (path.startsWith('http')) return path
+    return `${import.meta.env.BASE_URL}${path}`
+  }
 
   return (
     <div className={styles.screen}>
@@ -33,7 +38,7 @@ export default function DetailScreen({
             <div className={styles.glassPanel}>
               <div className={styles.brandBox}>
                 <div className={styles.brandLogoWrap}>
-                  <img src={brand.logo} alt={brand.name} className={styles.brandLogo} />
+                  <img src={getAssetPath(brand.logo)} alt={brand.name} className={styles.brandLogo} />
                 </div>
                 <div className={styles.brandPosition}>{brand.position}</div>
               </div>
@@ -70,7 +75,7 @@ export default function DetailScreen({
           {/* RIGHT: Product & Gauge */}
           <div className={styles.posterRight}>
             <div className={styles.productStage}>
-              <img src={brand.image} alt={brand.name} className={styles.productImg} />
+              <img src={getAssetPath(brand.image)} alt={brand.name} className={styles.productImg} />
               <div className={styles.reflection} />
             </div>
 
