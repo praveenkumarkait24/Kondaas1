@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://praveenkumarkait24.github.io/Kondaas-1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +10,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://praveenkumarkait24.github.io/Kondaas1/",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
